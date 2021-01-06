@@ -398,20 +398,34 @@ Ucren = {
 		};
 
 		incept = function( processId, fn ){
-			if( !map[processId] )
-				map[processId] = [];
-			map[processId].push( fn );
+      let m;
+      if ( !( m = map[processId] ) ) {
+        map[processId] = [fn];
+      } else {
+        m.push( fn );
+      }
 		};
 
-		return function(arg1, arg2, arg3){
-			if( typeof(arg2) === "undefined" )
-				arg2 = [];
+    ret = function(arg1, arg2, arg3) {
+      if ( typeof(arg2) === 'undefined' ) {
+        arg2 = [];
+      }
 
-			if( arg2 instanceof Array )
-			    send.apply(this, arguments);
-			else if( typeof(arg2) === "function" )
-			    incept.apply(this, arguments);
-		}
+      if ( arg2 instanceof Array ) {
+        send.apply(this, arguments);
+      } else if ( typeof(arg2) === 'function' ) {
+        incept.apply(this, arguments);
+      }
+    };
+
+    ret.remove = function( processId, fn ) {
+      let m; let i;
+      if ( ( m = map[processId] ) && ~( i = m.indexOf( fn ) ) ) {
+        m.splice( i, 1 );
+      }
+    };
+
+    return ret;
 	}(),
 
 	// Ucren.each (not recommended)
