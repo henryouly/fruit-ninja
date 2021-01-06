@@ -29,7 +29,8 @@
       "valid-jsdoc": 0,
       "max-len": "off",
       "no-unused-vars": "off",
-      "no-tabs": "off"
+      "no-tabs": "off",
+      "indent": [2, "tab"]
     },
     "env": {
       "es6": true,

@@ -3,8 +3,8 @@
  * @author 	dron
  * @date 	2012-06-28
  */
-var Ucren = require( "scripts/lib/ucren" );
-var timeline = require( "scripts/timeline" );
+let Ucren = require( 'scripts/lib/ucren' );
+let timeline = require( 'scripts/timeline' );
 
 /**
  * usage:
@@ -19,82 +19,85 @@ var timeline = require( "scripts/timeline" );
  * state( key ).off()			->	set the value of key to boolean value 'false'
  */
 
-var stack = {};
-var cache = {};
-var callbacks = {};
+let stack = {};
+let cache = {};
+let callbacks = {};
 
-module.exports = exports = function( key ){
+module.exports = exports = function( key ) {
+	if ( cache[key] ) {
+		return cache[key];
+	}
 
-	if( cache[ key ] )
-	    return cache[ key ];
-
-	return cache[ key ] = {
-		is: function( value ){
+	return cache[key] = {
+		is: function( value ) {
 		    return stack[key] === value;
 		},
 
-		isnot: function( value ){
+		isnot: function( value ) {
 		    return stack[key] !== value;
 		},
 
-		ison: function(){
+		ison: function() {
 			return this.is( true );
 		},
 
-		isoff: function(){
+		isoff: function() {
 			return this.isnot( true );
 		},
 
-		isunset: function(){
+		isunset: function() {
 			return this.is( undefined );
 		},
 
-		set: function(){
-			var lastValue = NaN;
-			return function( value ){
-			    var c;
+		set: function() {
+			let lastValue = NaN;
+			return function( value ) {
+			    let c;
 			    stack[key] = value;
-			    if( lastValue !== value && ( c = callbacks[ key ] ) )
-			    	for(var i = 0, l = c.length; i < l; i ++)
-			    		c[i].call( this, value );
+			    if ( lastValue !== value && ( c = callbacks[key] ) ) {
+					for (let i = 0, l = c.length; i < l; i ++) {
+						c[i].call( this, value );
+					}
+				}
 			   	lastValue = value;
-			}
+			};
 		}(),
 
-		get: function(){
+		get: function() {
 		    return stack[key];
 		},
 
-		on: function(){
-			var me = this;
+		on: function() {
+			let me = this;
 			me.set( true );
 			return {
-				keep: function( time ){
+				keep: function( time ) {
 					timeline.setTimeout( me.set.saturate( me, false ), time );
-				}
+				},
+			};
+		},
+
+		off: function() {
+			let me = this;
+		    me.set( false );
+		    return {
+		    	keep: function( time ) {
+		    		timeline.setTimeout( me.set.saturate( me, true ), time );
+		    	},
+		    };
+		},
+
+		hook: function( fn ) {
+			let c;
+		    if ( !( c = callbacks[key] ) ) {
+				callbacks[key] = [fn];
+			} else {
+				c.push( fn );
 			}
 		},
 
-		off: function(){
-			var me = this;
-		    me.set( false );
-		    return {
-		    	keep: function( time ){
-		    		timeline.setTimeout( me.set.saturate( me, true ), time );
-		    	}
-		    }
+		unhook: function() {
+		    // TODO:
 		},
-
-		hook: function( fn ){
-			var c;
-		    if( !( c = callbacks[ key ] ) )
-		        callbacks[ key ] = [ fn ];
-		    else
-		    	c.push( fn );
-		},
-
-		unhook: function(){
-		    // TODO: 
-		}
-	}
+	};
 };

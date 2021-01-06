@@ -1,21 +1,22 @@
-var layer = require( "../layer" );
+let layer = require( '../layer' );
 
-var x = 16, y = 0;
-var texts = [];
+let x = 16; let y = 0;
+let texts = [];
 
-exports.set = function(){
-	
+exports.set = function() {
+
 };
 
-exports.clear = function(){
-    for(var i = 0, l = texts.length; i < l; i ++)
-    	texts[i].remove();
-    texts.length = y = 0;
+exports.clear = function() {
+	for (let i = 0, l = texts.length; i < l; i ++) {
+		texts[i].remove();
+	}
+	texts.length = y = 0;
 };
 
-exports.log = function(text){
+exports.log = function(text) {
 	y += 20;
-    texts.push( layer.createText( "default", text, x, y ) );
+	texts.push( layer.createText( 'default', text, x, y ) );
 };
 
 module.exports = exports;

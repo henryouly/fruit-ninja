@@ -1,74 +1,74 @@
-var layer = require( "../layer" );
-var timeline = require( "../timeline" );
-var Ucren = require( "../lib/ucren" );
+let layer = require( '../layer' );
+let timeline = require( '../timeline' );
+let Ucren = require( '../lib/ucren' );
 
 /**
  * 旋转类模块模型
  */
 
-exports.create = function( imageSrc, x, y, w, h, z, anim, animDur ){
-	var module = {}, image;
-	var rotateDire = [12, -12][Ucren.randomNumber(2)];
-	var defaultAngle = Ucren.randomNumber(360);
+exports.create = function( imageSrc, x, y, w, h, z, anim, animDur ) {
+	let module = {}; let image;
+	let rotateDire = [12, -12][Ucren.randomNumber(2)];
+	let defaultAngle = Ucren.randomNumber(360);
 
 	module.anims = [];
 
-	module.set = function(){
-	    image = layer.createImage( "default", imageSrc, x, y, w, h ).scale( z, z ).rotate( defaultAngle, true );
+	module.set = function() {
+	    image = layer.createImage( 'default', imageSrc, x, y, w, h ).scale( z, z ).rotate( defaultAngle, true );
 	};
 
-	module.show = function(start){
-		timeline.createTask({ 
-			start: start, 
-			duration: animDur, 
-			object: this, 
-			data: [z, 1], 
+	module.show = function(start) {
+		timeline.createTask({
+			start: start,
+			duration: animDur,
+			object: this,
+			data: [z, 1],
 			onTimeUpdate: this.onZooming,
 			onTimeEnd: this.onShowEnd,
-			recycle: this.anims
+			recycle: this.anims,
 		});
 	};
 
-	module.hide = function(start){
+	module.hide = function(start) {
 		this.anims.clear();
-		timeline.createTask({ 
-			start: start, 
-			duration: animDur, 
-			object: this, 
-			data: [ 1, z ], 
+		timeline.createTask({
+			start: start,
+			duration: animDur,
+			object: this,
+			data: [1, z],
 			onTimeUpdate: this.onZooming,
-			recycle: this.anims
+			recycle: this.anims,
 		});
 	};
 
-	module.onShowEnd = function(name){
+	module.onShowEnd = function(name) {
 		this.anims.clear();
-		timeline.createTask({ 
-			start: 0, 
-			duration: -1, 
-			object: this, 
+		timeline.createTask({
+			start: 0,
+			duration: -1,
+			object: this,
 			onTimeUpdate: module.onRotating,
-			recycle: this.anims
+			recycle: this.anims,
 		});
 	};
 
-	module.onZooming = function(){
-		var z;
-		return function( time, a, b ){
+	module.onZooming = function() {
+		let z;
+		return function( time, a, b ) {
 		    image.scale( z = anim( time, a, b - a, animDur ), z );
-		}
+		};
 	}();
 
-	module.onRotating = function(){
-		var lastTime = 0, an = defaultAngle;
-	    return function( time, name, a, b ){
+	module.onRotating = function() {
+		let lastTime = 0; let an = defaultAngle;
+	    return function( time, name, a, b ) {
 	    	an = ( an + ( time - lastTime ) / 1e3 * rotateDire ) % 360;
 	    	image.rotate( an, true );
 	        lastTime = time;
-		}
+		};
 	}();
 
 	return module;
-}
+};
 
 module.exports = exports;
