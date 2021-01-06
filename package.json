@@ -4,5 +4,19 @@
   "main": "index.js",
   "repository": "https://github.com/henryouly/fruit-ninja",
   "author": "Henry Ou <henryouly@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "parcel build index.js",
+    "lint": "eslint .",
+    "link-local": "yalc link"
+  },
+  "alias": {
+    "scripts": "./source/scripts"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "parcel-bundler": "^1.12.4",
+    "yalc": "^1.0.0-pre.49"
+  }
 }
