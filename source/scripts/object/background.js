@@ -6,7 +6,7 @@ var image, time;
 var random = Ucren.randomNumber;
 
 exports.set = function(){
-	image = layer.createImage( "default", "images/background.jpg", 0, 0, 640, 480 );
+	image = layer.createImage( "default", require("images/background.jpg"), 0, 0, 640, 480 );
 };
 
 exports.wobble = function(){

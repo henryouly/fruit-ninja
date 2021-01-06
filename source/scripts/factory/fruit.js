@@ -29,12 +29,20 @@ var dropTime = 1200, dropXScope = 200, shadowPos = 50;
 
 var infos = {
 	// type: [ imageSrc, width, height, radius, fixAngle, isReverse, juiceColor ]
-	boom: [ "images/fruit/boom.png", 66, 68, 26, 0, 0, null ],
-	peach: [ "images/fruit/peach.png", 62, 59, 37, -50, 0, "#e6c731" ],
-	sandia: [ "images/fruit/sandia.png", 98, 85, 38, -100, 0, "#c00" ],
-	apple: [ "images/fruit/apple.png", 66, 66, 31, -54, 0, "#c8e925" ],
-	banana: [ "images/fruit/banana.png", 126, 50, 43, 90, 0, null ],
-	basaha: [ "images/fruit/basaha.png", 68, 72, 32, -135, 0, "#c00" ]
+  boom: [require('images/fruit/boom.png'), 66, 68, 26, 0, 0, null],
+  peach: [require('images/fruit/peach.png'), 62, 59, 37, -50, 0, '#e6c731'],
+  sandia: [require('images/fruit/sandia.png'), 98, 85, 38, -100, 0, '#c00'],
+  apple: [require('images/fruit/apple.png'), 66, 66, 31, -54, 0, '#c8e925'],
+  banana: [require('images/fruit/banana.png'), 126, 50, 43, 90, 0, null],
+  basaha: [require('images/fruit/basaha.png'), 68, 72, 32, -135, 0, '#c00'],
+};
+
+let parts = {
+  apple: [require('images/fruit/apple-1.png'), require('images/fruit/apple-2.png')],
+  banana: [require('images/fruit/banana-1.png'), require('images/fruit/banana-2.png')],
+  basaha: [require('images/fruit/basaha-1.png'), require('images/fruit/basaha-2.png')],
+  peach: [require('images/fruit/peach-1.png'), require('images/fruit/peach-2.png')],
+  sandia: [require('images/fruit/sandia-1.png'), require('images/fruit/sandia-2.png')],
 };
 
 // TODO: 是否水果全开？
@@ -64,7 +72,7 @@ function ClassFruit(conf){
 ClassFruit.prototype.set = function( hide ){
 	var inf = infos[ this.type ], radius = this.radius;
 
-	this.shadow = layer.createImage( "fruit", "images/shadow.png", this.startX - radius, this.startY - radius + shadowPos, 106, 77 );
+	this.shadow = layer.createImage( "fruit", require("images/shadow.png"), this.startX - radius, this.startY - radius + shadowPos, 106, 77 );
 	this.image = layer.createImage( "fruit", inf[0], this.startX - radius, this.startY - radius, inf[1], inf[2] );
 
 	if( hide )
@@ -156,8 +164,8 @@ ClassFruit.prototype.apart = function( angle ){
 
 	angle = ( ( angle % 180 ) + 360 + inf[4] ) % 360;
 
-	this.bImage1 = create( "fruit", preSrc + "-1.png" );
-	this.bImage2 = create( "fruit", preSrc + "-2.png" );
+  this.bImage1 = create( 'fruit', parts[this.type][0] );
+  this.bImage2 = create( 'fruit', parts[this.type][1] );
 
 	[ this.bImage1, this.bImage2 ].invoke( "rotate", angle );
 

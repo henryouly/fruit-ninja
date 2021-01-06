@@ -106,7 +106,7 @@ exports.create = function( ox, oy, start ){
   	};
 
 	var nx = ox, ny = oy;
-	var image = layer.image("images/smoke.png", nx - 21, ny - 21, 43, 43).hide();
+	var image = layer.image(require("images/smoke.png"), nx - 21, ny - 21, 43, 43).hide();
 	var flames = {};
 
 	timer1 = timeline.setTimeout(function(){

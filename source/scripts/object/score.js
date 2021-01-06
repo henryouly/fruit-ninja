@@ -21,7 +21,7 @@ var text2Sx = -93, text2Ex = 7;
 exports.anims = [];
 
 exports.set = function(){
-    image = layer.createImage( "default", "images/score.png", imageSx, 8, 29, 31 ).hide();
+    image = layer.createImage( "default", require("images/score.png"), imageSx, 8, 29, 31 ).hide();
     text1 = layer.createText( "default", "0", text1Sx, 24, "90-#fc7f0c-#ffec53", "30px" ).hide();
     text2 = layer.createText( "default", "BEST 999", text2Sx, 48, "#af7c05", "14px" ).hide();
 };

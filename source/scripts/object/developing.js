@@ -12,7 +12,7 @@ var exponential = tween.exponential.co;
 exports.anims = [];
 
 exports.set = function(){
-	this.image = layer.createImage( "default", "images/developing.png", 103, 218, 429, 53 ).hide().scale( 1e-5, 1e-5 );
+	this.image = layer.createImage( "default", require("images/developing.png"), 103, 218, 429, 53 ).hide().scale( 1e-5, 1e-5 );
 };
 
 exports.show = function( start ){

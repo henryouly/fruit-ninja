@@ -13,9 +13,9 @@ var back = tween.back.co;
 
 var o1, o2, o3, animLength = 500;
 
-var conf1 = { src: "images/x.png", sx: 650, ex: 561, y: 5, w: 22, h: 19 };
-var conf2 = { src: "images/xx.png", sx: 671, ex: 582, y: 5, w: 27, h: 26 };
-var conf3 = { src: "images/xxx.png", sx: 697, ex: 608, y: 6, w: 31, h: 32 };
+var conf1 = { src: require("images/x.png"), sx: 650, ex: 561, y: 5, w: 22, h: 19 };
+var conf2 = { src: require("images/xx.png"), sx: 671, ex: 582, y: 5, w: 27, h: 26 };
+var conf3 = { src: require("images/xxx.png"), sx: 697, ex: 608, y: 6, w: 31, h: 32 };
 
 var number = 0;
 
@@ -106,7 +106,7 @@ exports.onTimeEnd = function( mode ){
 };
 
 function createPosShow( x ){
-    var image = layer.createImage( "default", "images/lose.png", x - 27, 406, 54, 50 ).scale( 1e-5, 1e-5 );
+    var image = layer.createImage( "default", require("images/lose.png"), x - 27, 406, 54, 50 ).scale( 1e-5, 1e-5 );
     var duration = 500;
 
     var control = {

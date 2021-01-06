@@ -14,7 +14,7 @@ var jumpAnim = tween.quadratic.ci;
 exports.anims = [];
 
 exports.set = function(){
-    image = layer.createImage( "default", "images/new.png", sx, sy, sw, sh );
+    image = layer.createImage( "default", require("images/new.png"), sx, sy, sw, sh );
 };
 
 exports.unset = function(){

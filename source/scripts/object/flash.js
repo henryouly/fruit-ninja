@@ -14,7 +14,7 @@ var anims = [];
 var dur = 100;
 
 exports.set = function(){
-	image = layer.createImage( "flash", "images/flash.png", 0, 0, 358, 20 ).hide();
+	image = layer.createImage( "flash", require("images/flash.png"), 0, 0, 358, 20 ).hide();
 	snd = sound.create( "sound/splatter" );
 };
 
