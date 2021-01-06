@@ -18,7 +18,29 @@
   },
   "devDependencies": {
     "eslint": "^7.17.0",
+    "eslint-config-google": "^0.9.1",
     "parcel-bundler": "^1.12.4",
     "yalc": "^1.0.0-pre.49"
-  }
+  },
+  "eslintConfig": {
+    "extends": "google",
+    "rules": {
+      "require-jsdoc": 0,
+      "valid-jsdoc": 0,
+      "max-len": "off",
+      "no-unused-vars": "off",
+      "no-tabs": "off"
+    },
+    "env": {
+      "es6": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+    }
+  },
+  "eslintIgnore": [
+    "dist/"
+  ]
 }
