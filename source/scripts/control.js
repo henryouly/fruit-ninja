@@ -28,6 +28,25 @@ exports.installDragger = function(){
     dragger.bind( document.documentElement );
 };
 
+exports.installPoseDragger = function(dragger) {
+  dragger.on( 'returnValue', function( dx, dy, x, y, kf, part) {
+    // 此处姿势关键点坐标系本身与游戏画布坐标系对齐，不需要修正
+    if ( kf = knife.through( x, y ) ) {
+      // DEBUG
+      // console.log("part=" + part + " dx=" + dx + " dy=" + dy + " x=" + x + " y=" + y);
+      message.postMessage( kf, 'slice' );
+    }
+
+    // 游戏结束后挥手回到主界面
+    if ( state( 'click-enable' ).ison() ) {
+      message.postMessage( 'click' );
+    }
+  });
+  dragger.on( 'startDrag', function() {
+    knife.newKnife();
+  });
+};
+
 exports.installClicker = function(){
     Ucren.addEvent( document, "click", function(){
         if( state( "click-enable" ).ison() )
