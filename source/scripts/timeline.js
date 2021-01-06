@@ -4,7 +4,7 @@
  * @author dron
  */
 
-var Ucren = require( "lib/ucren" );
+var Ucren = require( "scripts/lib/ucren" );
 var timerCache = {};
 var timeline = {};
 

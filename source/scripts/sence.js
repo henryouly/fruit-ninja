@@ -1,41 +1,41 @@
-var Ucren = require( "lib/ucren" );
-var sound = require( "lib/sound" );
-var fruit = require( "factory/fruit" );
-var flash = require( "object/flash" );
+var Ucren = require( "scripts/lib/ucren" );
+var sound = require( "scripts/lib/sound" );
+var fruit = require( "scripts/factory/fruit" );
+var flash = require( "scripts/object/flash" );
 
-var state = require( "state" );
-var message = require( "message" );
+var state = require( "scripts/state" );
+var message = require( "scripts/message" );
 
 // the fixed elements
-var background = require( "object/background" );
-var fps = require( "object/fps" );
+var background = require( "scripts/object/background" );
+var fps = require( "scripts/object/fps" );
 
 // the home page elements
-var homeMask = require( "object/home-mask" );
-var logo = require( "object/logo" );
-var ninja = require( "object/ninja" )
-var homeDesc = require( "object/home-desc" );
+var homeMask = require( "scripts/object/home-mask" );
+var logo = require( "scripts/object/logo" );
+var ninja = require( "scripts/object/ninja" )
+var homeDesc = require( "scripts/object/home-desc" );
 
-var dojo = require( "object/dojo" );
-var newGame = require( "object/new-game" );
-var quit = require( "object/quit" );
-var newSign = require( "object/new" );
+var dojo = require( "scripts/object/dojo" );
+var newGame = require( "scripts/object/new-game" );
+var quit = require( "scripts/object/quit" );
+var newSign = require( "scripts/object/new" );
 var peach, sandia, boom;
 
 // the elements in game body
-var score = require( "object/score" );
-var lose = require( "object/lose" );
+var score = require( "scripts/object/score" );
+var lose = require( "scripts/object/lose" );
 
 // the game logic
-var game = require( "game" );
+var game = require( "scripts/game" );
 
 // the elements in 'developing' module
-var developing = require( "object/developing" );
-var gameOver = require( "object/game-over" );
+var developing = require( "scripts/object/developing" );
+var gameOver = require( "scripts/object/game-over" );
 
 // commons
-var message = require( "message" );
-var timeline = require( "timeline" );
+var message = require( "scripts/message" );
+var timeline = require( "scripts/timeline" );
 var setTimeout = timeline.setTimeout.bind( timeline );
 var setInterval = timeline.setInterval.bind( timeline );
 

@@ -1,16 +1,16 @@
-var timeline = require( "timeline" );
-var tools = require( "tools" );
-var sence = require( "sence" );
-var Ucren = require( "lib/ucren" );
-var buzz = require( "lib/buzz" );
-var control = require( "control" );
-var csl = require( "object/console" );
-var message = require( "message" );
-var state = require( "state" );
+var timeline = require( "scripts/timeline" );
+var tools = require( "scripts/tools" );
+var sence = require( "scripts/sence" );
+var Ucren = require( "scripts/lib/ucren" );
+var buzz = require( "scripts/lib/buzz" );
+var control = require( "scripts/control" );
+var csl = require( "scripts/object/console" );
+var message = require( "scripts/message" );
+var state = require( "scripts/state" );
 
-var game = require( "game" );
+var game = require( "scripts/game" );
 
-var collide = require( "collide" );
+var collide = require( "scripts/collide" );
 
 var setTimeout = timeline.setTimeout.bind( timeline );
 

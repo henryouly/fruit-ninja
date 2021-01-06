@@ -12,7 +12,9 @@
     "link-local": "yalc link"
   },
   "alias": {
-    "scripts": "./source/scripts"
+    "scripts": "./source/scripts",
+    "images": "./source/images",
+    "sound": "./source/sound"
   },
   "devDependencies": {
     "eslint": "^7.17.0",

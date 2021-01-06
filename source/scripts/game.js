@@ -1,19 +1,19 @@
 /**
  * game logic
  */
-var timeline = require( "timeline" );
-var Ucren = require( "lib/ucren" );
-var sound = require( "lib/sound" );
-var fruit = require( "factory/fruit" );
-var score = require( "object/score" );
-var message = require( "message" );
-var state = require( "state" );
-var lose = require( "object/lose" );
-var gameOver = require( "object/game-over" );
-var knife = require( "object/knife" );
-// var sence = require( "sence" );
-var background = require( "object/background" );
-var light = require( "object/light" );
+var timeline = require( "scripts/timeline" );
+var Ucren = require( "scripts/lib/ucren" );
+var sound = require( "scripts/lib/sound" );
+var fruit = require( "scripts/factory/fruit" );
+var score = require( "scripts/object/score" );
+var message = require( "scripts/message" );
+var state = require( "scripts/state" );
+var lose = require( "scripts/object/lose" );
+var gameOver = require( "scripts/object/game-over" );
+var knife = require( "scripts/object/knife" );
+// var sence = require( "scripts/sence" );
+var background = require( "scripts/object/background" );
+var light = require( "scripts/object/light" );
 
 var scoreNumber = 0;
 

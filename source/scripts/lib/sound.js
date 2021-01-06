@@ -11,7 +11,7 @@
  * snd.play();
  */
 
-var buzz = require( "buzz" );
+var buzz = require( "./buzz" );
 var supported = buzz.isSupported();
 
 var config = { 

@@ -1,7 +1,7 @@
-var Ucren = require( "lib/ucren" );
-var knife = require( "object/knife" );
-var message = require( "message" );
-var state = require( "state" );
+var Ucren = require( "scripts/lib/ucren" );
+var knife = require( "scripts/object/knife" );
+var message = require( "scripts/message" );
+var state = require( "scripts/state" );
 
 var canvasLeft, canvasTop;
 
