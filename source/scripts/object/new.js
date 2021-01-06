@@ -73,3 +73,5 @@ exports.onJumping = function(time){
 	
 	image.attr("y", jumpAnim( time, ey, dy, cycleTime ));
 };
+
+module.exports = exports;

@@ -141,3 +141,5 @@ function createPosShow( x ){
 
     control.show( 200 );
 }
+
+module.exports = exports;

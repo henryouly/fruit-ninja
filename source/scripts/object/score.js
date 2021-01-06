@@ -69,3 +69,5 @@ exports.onTimeEnd = function( mode ){
         [ image, text1, text2 ].invoke( "hide" ),
         text1.attr( "text", 0 );
 };
+
+module.exports = exports;
