@@ -15,7 +15,7 @@ let dur = 100;
 
 exports.set = function() {
 	image = layer.createImage( 'flash', require('images/flash.png'), 0, 0, 358, 20 ).hide();
-	snd = sound.create( 'sound/splatter' );
+	snd = sound.create( require('sound/splatter.ogg') );
 };
 
 exports.showAt = function( x, y, an ) {

@@ -15,7 +15,6 @@ let buzz = require( './buzz' );
 let supported = buzz.isSupported();
 
 let config = {
-	formats: ['ogg', 'mp3'],
 	preload: true,
 	autoload: true,
 	loop: false,

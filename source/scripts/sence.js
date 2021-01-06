@@ -44,8 +44,8 @@ let gameStartSnd;
 
 // initialize sence
 exports.init = function() {
-	menuSnd = sound.create( 'sound/menu' );
-	gameStartSnd = sound.create( 'sound/start' );
+	menuSnd = sound.create( require('sound/menu.ogg') );
+	gameStartSnd = sound.create( require('sound/start.ogg') );
 	[background, homeMask, logo, ninja, homeDesc, dojo, newSign, newGame, quit, score, lose, developing, gameOver, flash].invoke( 'set' );
 	// setInterval( fps.update.bind( fps ), 500 );
 };
