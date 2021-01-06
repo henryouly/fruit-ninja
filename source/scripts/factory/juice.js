@@ -76,3 +76,5 @@ exports.createOne = function( x, y, color ){
 	juice.render();
 	juice.sputter();
 };
+
+module.exports = exports;

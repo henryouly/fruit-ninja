@@ -44,3 +44,5 @@ exports.showAt = function( x, y, an ){
 exports.onTimeUpdate = function( time, a, b, z ){
     image.scale( z = anim( time, a, b - a, dur ), z );
 };
+
+module.exports = exports;

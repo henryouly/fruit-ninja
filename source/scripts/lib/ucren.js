@@ -1252,6 +1252,6 @@ if(Ucren.isIe)
 	document.execCommand("BackgroundImageCache", false, true);
 
 for(var i in Ucren){
-    exports[i] = Ucren[i];
+    module.exports[i] = exports[i] = Ucren[i];
 };
 

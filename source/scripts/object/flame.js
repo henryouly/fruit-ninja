@@ -126,3 +126,5 @@ exports.create = function( ox, oy, start ){
 
 	return object;
 };
+
+module.exports = exports;

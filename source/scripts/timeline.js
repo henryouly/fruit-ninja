@@ -238,3 +238,5 @@ exports.use = function( name ){
 	    exports;
 	return timeline.use( name );
 };
+
+module.exports = exports;

@@ -854,5 +854,4 @@ var buzz = {
     }
 };
 
-exports = buzz;;
-
+module.exports = exports = buzz;;

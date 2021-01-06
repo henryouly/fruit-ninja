@@ -101,3 +101,5 @@ exports.endAll = function(){
     for(var i = knifes.length - 1; i >= 0; i --)
 		knifes[i].end();
 };
+
+module.exports = exports;

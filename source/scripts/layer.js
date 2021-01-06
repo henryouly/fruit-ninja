@@ -54,3 +54,5 @@ exports.getLayer = function( name ){
 function zi(){
     return zi.num = ++ zi.num || 2;
 }
+
+module.exports = exports;

@@ -54,3 +54,6 @@ unSupported.play =
 unSupported.stop = function(){
 	// TODO: 
 };
+
+module.exports = exports;
+

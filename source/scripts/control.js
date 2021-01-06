@@ -47,3 +47,6 @@ exports.fixCanvasPos = function(){
 
 	Ucren.addEvent( window, "resize", fix );
 };
+
+module.exports = exports;
+

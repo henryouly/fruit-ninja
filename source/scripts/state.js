@@ -23,7 +23,7 @@ var stack = {};
 var cache = {};
 var callbacks = {};
 
-exports = function( key ){
+module.exports = exports = function( key ){
 
 	if( cache[ key ] )
 	    return cache[ key ];

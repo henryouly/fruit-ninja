@@ -17,3 +17,5 @@ exports.linear = function(index, offset, target, framesNum){ return target * ind
 exports.back = function(){};
 exports.back.ci = function(index, offset, target, framesNum, s){ s = 1.70158; return target * (index /= framesNum) * index * ((s + 1) * index - s) + offset; };
 exports.back.co = function(index, offset, target, framesNum, s){ s = 1.70158; return target * ((index = index / framesNum - 1) * index * ((s + 1) * index + s) + 1) + offset; };
+
+module.exports = exports;

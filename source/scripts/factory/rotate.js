@@ -70,3 +70,5 @@ exports.create = function( imageSrc, x, y, w, h, z, anim, animDur ){
 
 	return module;
 }
+
+module.exports = exports;

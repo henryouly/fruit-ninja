@@ -31,3 +31,5 @@ exports.pointToRadian =	function( origin, point ){
 
 	return t + PI;
 }
+
+module.exports = exports;

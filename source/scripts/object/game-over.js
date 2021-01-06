@@ -49,3 +49,5 @@ exports.onZoomEnd = function( sz, ez, mode ){
     else if( mode === "hide" )
         this.image.hide();
 };
+
+module.exports = exports;

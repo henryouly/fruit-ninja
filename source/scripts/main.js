@@ -87,3 +87,5 @@ if( !buzz.isSupported() )
 tip = tip.replace( "$", "" );
 
 Ucren.Element( "browser" ).html( tip );
+
+module.exports = exports;

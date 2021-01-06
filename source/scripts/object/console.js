@@ -17,3 +17,5 @@ exports.log = function(text){
 	y += 20;
     texts.push( layer.createText( "default", text, x, y ) );
 };
+
+module.exports = exports;

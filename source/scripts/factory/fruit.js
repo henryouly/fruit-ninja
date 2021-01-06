@@ -382,3 +382,5 @@ function getType(){
 	else
     	return types[ random( 5 ) ];
 }
+
+module.exports = exports;

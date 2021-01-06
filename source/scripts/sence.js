@@ -179,3 +179,5 @@ exports.hideQuit = function( callback ){
 message.addEventListener("sence.switchSence", function( name ){
     exports.switchSence( name );
 });
+
+module.exports = exports;

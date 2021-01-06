@@ -140,3 +140,5 @@ message.addEventListener("click", function(){
     gameOver.hide();
     message.postMessage( "home-menu", "sence.switchSence" );
 });
+
+module.exports = exports;

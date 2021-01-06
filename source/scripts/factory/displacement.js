@@ -60,3 +60,5 @@ exports.create = function( imageSrc, width, height, origX, origY, targetX, targe
 
 	return module;
 };
+
+module.exports = exports;

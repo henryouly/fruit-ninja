@@ -24,3 +24,5 @@ function wobble(){
     y = random( 12 ) - 6;
     image.attr({ x: x, y: y });
 };
+
+module.exports = exports;

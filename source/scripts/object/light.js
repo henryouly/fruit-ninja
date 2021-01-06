@@ -92,3 +92,5 @@ function build( x, y, r ){
 
     lights.push( light );
 }
+
+module.exports = exports;
